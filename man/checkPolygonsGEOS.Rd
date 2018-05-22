@@ -19,4 +19,3 @@ checkPolygonsGEOS(obj, properly = TRUE, force = TRUE, useSTRtree = FALSE)
 Code from \code{maptools 0.8-39}.
 Copyright: Roger Bivand and Edzer Pebesma.
 }
-

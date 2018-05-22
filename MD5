@@ -1,8 +1,8 @@
-b42ea7ee373db11b7619f5561b933acb *DESCRIPTION
-2b0e87d607d588e5b69e203ffc1c991f *NAMESPACE
-bc3166aca4c1d9671dd5a7cefbec619c *R/cartogram.R
-20914fc026b84ed5d8b59347e01af777 *R/nc_cartogram.R
-0a24cc297651f269b72932f4ab4224ba *README.md
-7dd6feae877f9f86494aed46a5f66ea6 *man/cartogram.Rd
-c652e0faa5ded81ab639ed7ef012007d *man/checkPolygonsGEOS.Rd
-b2fc5dfc5b635eed3321755fd03d0f49 *man/nc_cartogram.Rd
+c3885a8c3f2a828673b8736e467638b8 *DESCRIPTION
+77506c918dee5d1b00e8b8e604cf1acf *NAMESPACE
+af3f24ad84ccae5724903d491571f5e2 *R/cartogram.R
+7c52a548d20995f587ae629648cbc690 *R/nc_cartogram.R
+1bf1c2b9beaa8c186845f38f3584fbcc *README.md
+4da593707ba20f01414f2ba806cb9b8d *man/cartogram.Rd
+33aaa950f03493c3db8cffd60e7eb15a *man/checkPolygonsGEOS.Rd
+12ba1d24a8cf7e6980f14b47f8f1b70b *man/nc_cartogram.Rd

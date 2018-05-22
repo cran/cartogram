@@ -18,27 +18,51 @@
 #' @title Calculate Non-Contiguous Cartogram Boundaries
 #' @description Construct a non-contiguous area cartogram (Olson 1976).
 #'
-#' @param shp SpatialPolygonDataFrame
+#' @param shp SpatialPolygonDataFrame or an sf object
 #' @param weight Name of the weighting variable in shp
 #' @param k Factor expansion for the unit with the greater value
 #' @param inplace If TRUE, each polygon is modified in its original place, 
-#' if FALSE multi-polygons are centered on their initial centroid. 
-#' @return SpatialPolygonDataFrame with resized polygon boundaries
+#' if FALSE multi-polygons are centered on their initial centroid
+#' @return An object of the same class as shp with resized polygon boundaries
 #' @export
 #' @import sp
 #' @import rgeos
-#' @importFrom methods is slot
+#' @importFrom methods is slot as
 #' @examples
 #' library(maptools)
 #' library(cartogram)
 #' library(rgdal)
 #' data(wrld_simpl)
+#' 
+#' # Remove uninhabited regions
 #' afr <- spTransform(wrld_simpl[wrld_simpl$REGION==2 & wrld_simpl$POP2005 > 0,],
 #'                    CRS("+init=epsg:3395"))
+#'
+#' # Create cartogram
+#' afr_nc <- nc_cartogram(afr, "POP2005")
+#'
+#' # Plot
 #' plot(afr)
-#' plot(nc_cartogram(afr, "POP2005"), add = TRUE, col = 'red')
+#' plot(afr_nc, add = TRUE, col = 'red')
+#'
+#' # Same with sf objects
+#' library(sf)
+#'
+#' afr_sf = st_as_sf(afr)
+#'
+#' afr_sf_nc <- nc_cartogram(afr_sf, "POP2005")
+#'
+#' plot(st_geometry(afr_sf))
+#' plot(st_geometry(afr_sf_nc), add = TRUE, col = 'red')
+#'
 #' @references Olson, J. M. (1976), Noncontiguous Area Cartograms. The Professional Geographer, 28: 371–380. doi:10.1111/j.0033-0124.1976.00371.x
 nc_cartogram <- function(shp, weight, k = 1, inplace = T){
+  UseMethod("nc_cartogram")
+}
+
+#' @rdname nc_cartogram
+#' @export
+nc_cartogram.SpatialPolygonsDataFrame <- function(shp, weight, k = 1, inplace = T){
 
   var <- weight
   spdf <- shp[!is.na(shp@data[,var]),]
@@ -66,7 +90,12 @@ nc_cartogram <- function(shp, weight, k = 1, inplace = T){
   return(spdf)
 }
 
-
+#' @rdname nc_cartogram
+#' @export
+nc_cartogram.sf <- function(shp, weight, k = 1, inplace = T){
+  st_as_sf(nc_cartogram.SpatialPolygonsDataFrame(as(shp, "Spatial"),
+                                        weight=weight, k=k, inplace=T))
+}
 
 rescalePoly <- function(spdf, inplace = TRUE, r = 1){
   nsubpolygon <- length(spdf@polygons[[1]]@Polygons)

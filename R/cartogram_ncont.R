@@ -92,7 +92,7 @@ cartogram_ncont.sf <- function(x, weight, k = 1, inplace = TRUE){
   spdf <- x[!is.na(x[, var, drop=T]),]
   
   # size
-  surf <- sf::st_area(spdf, by_element=T)
+  surf <- as.numeric(sf::st_area(spdf, by_element=T))
   v <- spdf[, var, drop=T] 
   mv <- max(v)
   ms <- surf[v==mv]
@@ -101,12 +101,12 @@ cartogram_ncont.sf <- function(x, weight, k = 1, inplace = TRUE){
   spdf$r[spdf$r == 0] <- 0.001 # don't shrink polygons to zero area
   n <- nrow(spdf)
   for(i in 1:n){
-    sf::st_geometry(spdf[i,]) <- rescalePoly.sf(spdf[i, ], 
+    sf::st_geometry(spdf)[i] <- rescalePoly.sf(spdf[i, ], 
                                          inplace = inplace, 
                                          r = spdf[i,]$r)
   } 
   spdf$r <- NULL
-  return(return(sf::st_buffer(spdf, 0)))
+  sf::st_buffer(spdf, 0)
 }
 
 #' @importFrom sf st_geometry st_centroid st_cast st_union

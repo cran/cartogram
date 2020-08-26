@@ -29,6 +29,7 @@ devtools::install_github("sjewo/cartogram")
 
 ## NEWS
 
+  - \[0.2.2\] Fix geometry replacement in cartogram_ncont
   - \[0.2.0\] Migrated all functions to sf, fixed problems with
     multipolygons. cartogram functions won’t accept features with
     longitude/latitude coordinates anymore.

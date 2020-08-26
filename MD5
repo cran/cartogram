@@ -1,10 +1,10 @@
-4e010ff8f3d4135d6ebb61cdbf2d776d *DESCRIPTION
+aaaa5c855faf2af22b13f3b6303bd410 *DESCRIPTION
 1e6f93617c1defa0ab2f6652a96f7542 *NAMESPACE
-49545ffa1c9542bcf2ae7ef70cc7a7a7 *NEWS
+16c199da1758906fd8ab2679b9508a23 *NEWS
 0d514e9592e819ad5976ec271e765c68 *R/cartogram_cont.R
 6091ae43b6c713a49def06939d2edb96 *R/cartogram_dorling.R
-1d530aaed03f1ae7cd5987370c55759a *R/cartogram_ncont.R
-9f0477aaa3014094e9f2a617752f6915 *README.md
+6bd6bf2e7b4be86912f5275b60b0c633 *R/cartogram_ncont.R
+4fe95dfabc8691e3788fc16bda237cd7 *README.md
 09e43836233f35728ba9339287f99a63 *man/cartogram.Rd
 5534c742fb5c1a34f18bafa9e0fa9551 *man/cartogram_cont.Rd
 e60d93e7ec99a7814ca5567efd61b6a7 *man/cartogram_dorling.Rd

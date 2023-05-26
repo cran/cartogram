@@ -1,6 +1,6 @@
 Package: cartogram
 Title: Create Cartograms with R
-Version: 0.2.2
+Version: 0.3.0
 Authors@R: c(
   person("Sebastian", "Jeworutzki", email = "sebastian.jeworutzki@ruhr-uni-bochum.de", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2671-5253")),
   person("Timothee", "Giraud", role = "ctb"),
@@ -13,13 +13,12 @@ Description: Construct continuous and non-contiguous area cartograms.
 URL: https://github.com/sjewo/cartogram
 BugReports: https://github.com/sjewo/cartogram/issues
 Imports: methods, sf, packcircles
-Suggests: rgeos, sp, rgdal, maptools
+Suggests:
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2020-08-26 11:45:05 UTC; sj
+Packaged: 2023-05-26 11:05:17 UTC; sj
 Author: Sebastian Jeworutzki [aut, cre]
     (<https://orcid.org/0000-0002-2671-5253>),
   Timothee Giraud [ctb],
@@ -29,4 +28,4 @@ Author: Sebastian Jeworutzki [aut, cre]
   Jakub Nowosad [ctb] (<https://orcid.org/0000-0002-1057-3721>)
 Maintainer: Sebastian Jeworutzki <sebastian.jeworutzki@ruhr-uni-bochum.de>
 Repository: CRAN
-Date/Publication: 2020-08-26 20:20:11 UTC
+Date/Publication: 2023-05-26 11:30:02 UTC
